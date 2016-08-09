@@ -66,72 +66,43 @@ public class BattingAverage {
 		}
 
 	public void getStats(String name) {
-			try {
+	try {
 		
 			System.out.print("Times at bat: ");
-
 			atbat = scan.nextInt();
-		} catch (InputMismatchException e) {
-			System.out.println("Please enter a valid digit");
-			main(null);
-		}
 		if (atbat < 0) {
-			System.out.println("Please enter a valid digit");
+			System.out.println("Please enter a valid digit.");
 			main(null);
 		}
-				
-		try {
 			System.out.print("Single hits: ");
-
 			sin = scan.nextInt();
-		} catch (InputMismatchException e) {
-			System.out.println("Please enter a valid digit");
-			main(null);
-		}
-		if (sin < 0) {
+			if (sin < 0) {
 			System.out.println("Please enter a valid digit");
 			main(null);
 		}
 		
-		try {
 			System.out.print("Double hits: ");
-
 			doub = scan.nextInt();
-		} catch (InputMismatchException e) {
-			System.out.println("Please enter a valid digit");
-			main(null);
-		}
 		if (doub < 0) {
 			System.out.println("Please enter a valid digit");
 			main(null);
 		}
-		
-		try {
 			System.out.print("Triple hits: ");
-
 			trip = scan.nextInt();
-		} catch (InputMismatchException e) {
-			System.out.println("Please enter a valid digit");
-			main(null);
-		}
 		if (trip < 0) {
 			System.out.println("Please enter a valid digit");
 			main(null);
 		}
-		
-		try {
 			System.out.print("Homeruns: \n");
-
 			home = scan.nextInt();
-		} catch (InputMismatchException e) {
-			System.out.println("Please enter a valid digit");
-			main(null);
-		}
 		if (home < 0) {
 			System.out.println("Please enter a valid digit");
 			main(null);
 		}
-		
+	}catch (InputMismatchException e) {
+			System.out.println("That is not a valid entry. Please start again.");
+			System.exit(0);
+		}	
 		System.out.println("");
 
 	}
