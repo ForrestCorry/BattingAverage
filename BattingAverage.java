@@ -1,5 +1,6 @@
 package com.ssa.battingaverage;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class BattingAverage {
@@ -26,12 +27,13 @@ public class BattingAverage {
 		player.calcAvg();
 		player.calcSlug();
 		player.printAll(name);
+		System.out.println("");
 		System.out.println("Would you like to enter another batter?\n" + "Y: Yes\n" + "N: No");
 		String newBatter = sc.nextLine();
 		playAgain(newBatter);
 		}
 	}
-		
+	
 	public static boolean playAgain(String newBatter){
 		switch (newBatter.toLowerCase()) {
 		case "n":
@@ -43,7 +45,7 @@ public class BattingAverage {
 			break;
 		default:
 			System.out.println("That is not a valid entry!");
-			System.exit(0);
+			main(null);
 		
 		}
 		return anotherBatter;
@@ -64,26 +66,72 @@ public class BattingAverage {
 		}
 
 	public void getStats(String name) {
+			try {
+		
+			System.out.print("Times at bat: ");
 
-		System.out.print("Times at bat: ");
+			atbat = scan.nextInt();
+		} catch (InputMismatchException e) {
+			System.out.println("Please enter a valid digit");
+			main(null);
+		}
+		if (atbat < 0) {
+			System.out.println("Please enter a valid digit");
+			main(null);
+		}
+				
+		try {
+			System.out.print("Single hits: ");
 
-		atbat = scan.nextInt();
+			sin = scan.nextInt();
+		} catch (InputMismatchException e) {
+			System.out.println("Please enter a valid digit");
+			main(null);
+		}
+		if (sin < 0) {
+			System.out.println("Please enter a valid digit");
+			main(null);
+		}
+		
+		try {
+			System.out.print("Double hits: ");
 
-		System.out.print("Single hits: ");
+			doub = scan.nextInt();
+		} catch (InputMismatchException e) {
+			System.out.println("Please enter a valid digit");
+			main(null);
+		}
+		if (doub < 0) {
+			System.out.println("Please enter a valid digit");
+			main(null);
+		}
+		
+		try {
+			System.out.print("Triple hits: ");
 
-		sin = scan.nextInt();
+			trip = scan.nextInt();
+		} catch (InputMismatchException e) {
+			System.out.println("Please enter a valid digit");
+			main(null);
+		}
+		if (trip < 0) {
+			System.out.println("Please enter a valid digit");
+			main(null);
+		}
+		
+		try {
+			System.out.print("Homeruns: \n");
 
-		System.out.print("Double hits: ");
-
-		doub = scan.nextInt();
-
-		System.out.print("Triple hits: ");
-
-		trip = scan.nextInt();
-
-		System.out.print("Homeruns: \n");
-
-		home = scan.nextInt();
+			home = scan.nextInt();
+		} catch (InputMismatchException e) {
+			System.out.println("Please enter a valid digit");
+			main(null);
+		}
+		if (home < 0) {
+			System.out.println("Please enter a valid digit");
+			main(null);
+		}
+		
 		System.out.println("");
 
 	}
